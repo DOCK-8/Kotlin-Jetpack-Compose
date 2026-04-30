@@ -55,8 +55,4 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
-    
-    var navControllerVersion = "2.9.8"
-    //NavControllerDependencie
-    implementation("androidx.navigation:navigation-compose:$navControllerVersion")
 }
