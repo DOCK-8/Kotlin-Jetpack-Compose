@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:2:1-27:12
+ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:2:1-27:12
 MERGED from [androidx.navigation:navigation-runtime-android:2.9.8] /home/dk8/.gradle/caches/9.4.1/transforms/6a2426c4b069f4bbab2db8c9a99948b9/transformed/navigation-runtime-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-android:2.9.8] /home/dk8/.gradle/caches/9.4.1/transforms/0e391dd5f1debf61a1d086629d2fb1b3/transformed/navigation-common-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-compose-android:2.9.8] /home/dk8/.gradle/caches/9.4.1/transforms/bde76d0d871c4d082b853bcfc7d252ab/transformed/navigation-compose-release/AndroidManifest.xml:2:1-7:12
@@ -70,18 +70,18 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/d
 MERGED from [androidx.print:print:1.0.0] /home/dk8/.gradle/caches/9.4.1/transforms/28ce880d94d071dcbf11033fe8cd0a2e/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/dk8/.gradle/caches/9.4.1/transforms/8e6367ca89f350398bc96deea3b693af/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 	package
-		INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml
+		INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml
+		INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml
+		INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:5:5-25:19
-INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:5:5-25:19
+ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:5:5-25:19
+INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:5:5-25:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/dk8/.gradle/caches/9.4.1/transforms/593778e58b3aa7b64fc11d14bb7786ec/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/dk8/.gradle/caches/9.4.1/transforms/593778e58b3aa7b64fc11d14bb7786ec/transformed/ui-tooling/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.10.4] /home/dk8/.gradle/caches/9.4.1/transforms/1ea40f094cb16ef049c65222bb0a62b4/transformed/ui-test-manifest-1.10.4/AndroidManifest.xml:22:5-27:19
@@ -101,49 +101,49 @@ MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /home/dk8/.gradle
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/dk8/.gradle/caches/9.4.1/transforms/b09d0613f765d5614f2024d2d738e94a/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/dk8/.gradle/caches/9.4.1/transforms/b09d0613f765d5614f2024d2d738e94a/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
-		INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml
+		INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.16.0] /home/dk8/.gradle/caches/9.4.1/transforms/8ec6cd0a91628ba578d222a8c37bb02b/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:10:9-41
 	android:fullBackupContent
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:8:9-54
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:8:9-54
 	android:roundIcon
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:11:9-54
 	android:icon
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:13:9-51
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:13:9-51
 	android:dataExtractionRules
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:7:9-65
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:7:9-65
 activity#com.example.myapplication.MainActivity
-ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:14:9-24:20
+ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:14:9-24:20
 	android:label
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:17:13-45
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:17:13-45
 	android:exported
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:16:13-36
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:16:13-36
 	android:theme
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:18:13-55
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:18:13-55
 	android:name
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:15:13-41
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:15:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:19:13-23:29
+ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:20:17-69
+ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:20:25-66
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:22:17-77
+ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml:22:27-74
+		ADDED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml:22:27-74
 uses-sdk
-INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml
-INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml
+INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml
+INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml
 MERGED from [androidx.navigation:navigation-runtime-android:2.9.8] /home/dk8/.gradle/caches/9.4.1/transforms/6a2426c4b069f4bbab2db8c9a99948b9/transformed/navigation-runtime-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-runtime-android:2.9.8] /home/dk8/.gradle/caches/9.4.1/transforms/6a2426c4b069f4bbab2db8c9a99948b9/transformed/navigation-runtime-release/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-common-android:2.9.8] /home/dk8/.gradle/caches/9.4.1/transforms/0e391dd5f1debf61a1d086629d2fb1b3/transformed/navigation-common-release/AndroidManifest.xml:20:5-44
@@ -275,9 +275,9 @@ MERGED from [androidx.print:print:1.0.0] /home/dk8/.gradle/caches/9.4.1/transfor
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/dk8/.gradle/caches/9.4.1/transforms/8e6367ca89f350398bc96deea3b693af/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/dk8/.gradle/caches/9.4.1/transforms/8e6367ca89f350398bc96deea3b693af/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
-		INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml
+		INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/dk8/Documentos/Android/Android-template-temporaly/MyApplication/app/src/main/AndroidManifest.xml
+		INJECTED from /home/dk8/Documentos/Android/LAB/MyApplication/app/src/main/AndroidManifest.xml
 activity#androidx.compose.ui.tooling.PreviewActivity
 ADDED from [androidx.compose.ui:ui-tooling-android:1.10.4] /home/dk8/.gradle/caches/9.4.1/transforms/593778e58b3aa7b64fc11d14bb7786ec/transformed/ui-tooling/AndroidManifest.xml:23:9-25:39
 	android:exported

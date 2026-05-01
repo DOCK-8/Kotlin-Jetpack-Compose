@@ -13,11 +13,14 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource
+import com.example.myapplication.Person
 
 @Composable
-fun ButtonGender (widthButton : Dp, heightButton : Dp, iconWhere : Int, gender : String, iconSize : Dp){
+fun ButtonGender (widthButton : Dp, heightButton : Dp, iconWhere : Int, gender : String, iconSize : Dp, Persona : Person){
     Button( 
-        onClick = {},
+        onClick = {
+           Persona.gender = 2
+        },
         shape = RoundedCornerShape(20.dp), 
         modifier = Modifier.size(width = widthButton, height = heightButton)) 
     { 

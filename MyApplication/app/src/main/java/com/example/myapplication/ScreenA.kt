@@ -24,9 +24,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 
 import androidx.compose.ui.res.painterResource
+//Add Mutable Variable
+import androidx.compose.runtime.remember
+
+import com.example.myapplication.Person
 
 @Composable
 fun ScreenA (navController : NavController) {
+    val Persona = Person(0,0,0f,0f)
     val widthButton = 150.dp
     val heightButton = 250.dp
     val iconSize = 60.dp
@@ -40,15 +45,16 @@ fun ScreenA (navController : NavController) {
         val icona : Int = R.drawable.man
         val iconb : Int = R.drawable.woman
         Row{
-            ButtonGender(widthButton, heightButton, icona, "Masculino", iconSize)
+            ButtonGender(widthButton, heightButton, icona, "Masculino", iconSize, Persona)
             Spacer(modifier = Modifier.size(20.dp))
-            ButtonGender(widthButton, heightButton, iconb, "Femenino", iconSize)
+            ButtonGender(widthButton, heightButton, iconb, "Femenino", iconSize, Persona)
+            Text(text = "${Persona.gender}")
         }
         slider()
         Row{
-            upperButton("Peso KG", 10)
+            upperButton("Peso KG", 0.5f)
             Spacer(modifier = Modifier.size(width = 20.dp, height = 1.dp))
-            upperButton("Edad", 18)
+            upperButton("Edad", 1.0f)
         }
         Button( onClick = {
             navController.navigate(Routes.ScreenB+"/JulioProfe")

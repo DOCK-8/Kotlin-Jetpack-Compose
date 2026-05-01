@@ -20,21 +20,23 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 
 @Composable
-fun upperButton(attribute : String, dataValue : Int) {
+fun upperButton(attribute : String, dataIncrement : Float) {
     Column(Modifier.clip(shape = RoundedCornerShape(10.dp)).background(Color(0xFFEDEDE9)).padding(20.dp)) {
+        // Mutable Variable
         var upperValue by remember {
             mutableFloatStateOf(0f)
         }
+        //Static UI elements
         Text(text = attribute, fontSize = 8.sp)
-        Text(text = String.format("%.2f",upperValue), fontSize = 14.sp)
+        Text(text = String.format("%.1f",upperValue), fontSize = 14.sp)
         Row {
             Button(onClick = {
-                upperValue+=0.1f
+                upperValue+=dataIncrement
             },colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFBC6C25))) {
                 Text(text = "+")
             }
             Button(onClick = {
-                upperValue-=0.1f
+                upperValue-=dataIncrement
             },colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFBC6C25))) {
                 Text(text = "-")
             }
