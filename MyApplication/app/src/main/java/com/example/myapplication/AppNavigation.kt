@@ -1,5 +1,8 @@
 package com.example.myapplication
 
+import com.example.myapplication.View.ScreenA
+import com.example.myapplication.View.ScreenB
+
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.NavHost

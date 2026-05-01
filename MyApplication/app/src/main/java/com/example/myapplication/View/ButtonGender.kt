@@ -1,6 +1,6 @@
-package com.example.myapplication
+package com.example.myapplication.View
 
-import com.example.myapplication.R
+import com.example.myapplication.Model.Person
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,7 +13,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource
-import com.example.myapplication.Person
 
 @Composable
 fun ButtonGender (widthButton : Dp, heightButton : Dp, iconWhere : Int, gender : String, iconSize : Dp, Persona : Person){

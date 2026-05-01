@@ -1,6 +1,7 @@
-package com.example.myapplication
+package com.example.myapplication.View
 
 import com.example.myapplication.R
+import com.example.myapplication.Model.Person
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -27,7 +28,6 @@ import androidx.compose.ui.res.painterResource
 //Add Mutable Variable
 import androidx.compose.runtime.remember
 
-import com.example.myapplication.Person
 
 @Composable
 fun ScreenA (navController : NavController) {
@@ -55,11 +55,6 @@ fun ScreenA (navController : NavController) {
             upperButton("Peso KG", 0.5f)
             Spacer(modifier = Modifier.size(width = 20.dp, height = 1.dp))
             upperButton("Edad", 1.0f)
-        }
-        Button( onClick = {
-            navController.navigate(Routes.ScreenB+"/JulioProfe")
-        }){
-            Text(text = "CALCULAR")
         }
     }
 
