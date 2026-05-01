@@ -31,7 +31,6 @@ import androidx.compose.runtime.remember
 
 @Composable
 fun ScreenA (navController : NavController) {
-    val Persona = Person(0,0,0f,0f)
     val widthButton = 150.dp
     val heightButton = 250.dp
     val iconSize = 60.dp
