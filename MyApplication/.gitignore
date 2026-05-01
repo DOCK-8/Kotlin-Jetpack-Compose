@@ -1,2 +1,2 @@
-/build
-/test
+app/build/
+app/src/test/

@@ -1,4 +1,0 @@
-modulePath=:app
-testedVariantName=debug
-testSuiteName=UnitTest
-testTarget=host
