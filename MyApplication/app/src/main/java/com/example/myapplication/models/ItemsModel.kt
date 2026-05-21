@@ -1,6 +1,6 @@
 package com.example.myapplication.models
 
-dataclass ItemsModel(
+data class ItemsModel(
     val id : Int,
     val name : String,
     val price : Double,
