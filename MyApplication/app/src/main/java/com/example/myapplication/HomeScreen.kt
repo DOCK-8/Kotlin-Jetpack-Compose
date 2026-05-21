@@ -2,6 +2,8 @@ package com.example.myapplication
 
 import com.example.myapplication.builders.SingleButtonForm
 import com.example.myapplication.builders.SingleButtonType
+import com.example.myapplication.builders.CardVideoType
+import com.example.myapplication.builders.CardVideoForm
 import com.example.myapplication.components.AppBottomBar
 import com.example.myapplication.components.AppTopBar
 import com.example.myapplication.components.PrimaryButtons
@@ -9,6 +11,7 @@ import com.example.myapplication.components.SearchBar
 import com.example.myapplication.components.ProductList
 import com.example.myapplication.components.ProductCard
 import com.example.myapplication.components.SingleButton
+import com.example.myapplication.components.CardVideo
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -41,9 +44,9 @@ fun HomeScreen(){
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-    SingleButton(onClick = {}, text = "Play", form = SingleButtonForm.Circle, type = SingleButtonType.View)
-    SingleButton(onClick = {}, text = "Play", form = SingleButtonForm.Square, type = SingleButtonType.Watch)
-    SingleButton(onClick = {}, text = "Play", form = SingleButtonForm.Rectangle, type = SingleButtonType.AnimeView)
+    CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, type = CardVideoType.Movie)
+    CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, type = CardVideoType.Serie)
+    CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, form = CardVideoForm.Rectangle)
     }
 
     /*
