@@ -19,6 +19,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.aspectRatio
@@ -55,14 +56,17 @@ fun CardVideo(
         aspectRatio(cardVideoDimensions.aspectRatio).
         clip(cardVideoDimensions.shape)
     Box(
-        contentAlignment = Alignment.BottomCenter,
         modifier = actualModifier){
         Image(
             painter = painterResource(id = R.drawable.test),
             contentDescription = "Card Video Image",
             modifier = modifier.fillMaxWidth()
         )
-        Row{
+        Column(
+            modifier = modifier.
+                align(Alignment.BottomEnd).
+                fillMaxWidth()
+        ){
             title?.let {
                 Text(text = title)
             }
@@ -78,7 +82,7 @@ fun CardVideo(
                 ranking?.let {
                     Text(text = ranking.toString())
                 }
-                Spacer(modifier = Modifier.size(2.dp))
+                Spacer(modifier = modifier.size(2.dp))
                 duration?.let {
                     Text(text = duration.toString())
                 }

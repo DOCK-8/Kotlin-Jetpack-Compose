@@ -26,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
@@ -41,13 +42,15 @@ fun HomeScreen(){
         "articulo4",
         "articulo5",
     )
-    CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, form = CardVideoForm.Rectangle)
+    /*
     Row(
         modifier = Modifier.fillMaxSize()
     ) {
     CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, type = CardVideoType.Movie)
     CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, type = CardVideoType.Serie)
-    }
+    } 
+    */
+    CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, form = CardVideoForm.Rectangle)
 
     /*
     Scaffold(
