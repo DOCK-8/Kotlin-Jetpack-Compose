@@ -41,12 +41,12 @@ fun HomeScreen(){
         "articulo4",
         "articulo5",
     )
-    Column(
+    CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, form = CardVideoForm.Rectangle)
+    Row(
         modifier = Modifier.fillMaxSize()
     ) {
     CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, type = CardVideoType.Movie)
     CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, type = CardVideoType.Serie)
-    CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, form = CardVideoForm.Rectangle)
     }
 
     /*
