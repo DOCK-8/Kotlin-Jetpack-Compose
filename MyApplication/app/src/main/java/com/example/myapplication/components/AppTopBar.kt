@@ -7,8 +7,8 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppTopBar(){
+fun AppTopBar(nameView : String){
     TopAppBar( title = {
-        Text("SmartMarket")
+        Text(nameView)
     })
 }

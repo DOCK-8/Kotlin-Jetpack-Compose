@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.navigation.NavController
 
 @Composable
-fun ProductDetailScreen(navController : NavController){
+fun ProductDetailScreen(){
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,

@@ -22,6 +22,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.ui.draw.shadow
 import com.example.myapplication.builders.SingleButtonColor
 import com.example.myapplication.builders.SingleButtonDimension
 import com.example.myapplication.builders.SingleButtonForm
@@ -30,6 +32,7 @@ import com.example.myapplication.builders.SingleButtonType
 import com.example.myapplication.builders.getSingleButtonColors
 import com.example.myapplication.builders.getSingleButtonFontSize
 import com.example.myapplication.builders.getSingleButtonDimension
+import com.example.myapplication.R
 
 @Composable
 fun SingleButton(
@@ -48,15 +51,22 @@ fun SingleButton(
     val buttonFontSize : TextUnit = getSingleButtonFontSize(size)
 
     val actualModifier = modifier
+        /*
+        * Borde : I don't like how it looks
         .border(
             border = BorderStroke(1.dp, if (enabled) Color.DarkGray else Color.LightGray),
             shape = shape 
         )
+        */
         .padding(3.dp)
-        .aspectRatio(buttonDimension.width)
-        //.fillMaxWidth(buttonDimension.width)
-        //.fillMaxHeight(buttonDimension.height)
-
+        .fillMaxWidth(buttonDimension.width)
+        .aspectRatio(buttonDimension.width / buttonDimension.height)
+        .shadow( 
+            elevation = 20.dp,
+            shape = CircleShape,
+            ambientColor = Color.White.copy(alpha = 0.3f),
+            spotColor = Color.White.copy(alpha = 0.3f)) 
+            
     Button(
         onClick = onClick,
         enabled = enabled,
@@ -66,13 +76,11 @@ fun SingleButton(
         ),
         modifier = actualModifier
     ) {
-        icon?.let {
-            Icon(
-                painter = painterResource(id = it),
-                contentDescription = null,
-                modifier = Modifier.size(5.dp)
-            )
-        }
+        Icon(
+            painter = painterResource(id = R.drawable.play),
+            contentDescription = null,
+            modifier = Modifier.size(30.dp)
+        )
         text?.let{
             Spacer(modifier = Modifier.width(8.dp))
             Text(

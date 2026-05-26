@@ -14,29 +14,27 @@ import com.example.myapplication.builders.CardVideoForm.Square
 import com.example.myapplication.builders.CardVideoSize.Small
 import com.example.myapplication.builders.CardVideoSize.Medium
 // End Card Video Import
+// Navigate Card Details
+import androidx.navigation.NavController
+import com.example.myapplication.navigate.Route
+import com.example.myapplication.navigate.Route.ProductDetail
+// End
 
 
 @Composable
 fun CardVideoList(
-    productos : List<String>
+    productos : List<String>,
+    navController : NavController? = null
 ){
     LazyVerticalGrid(
         columns = GridCells.Adaptive(minSize = 150.dp), 
     ){
         items(productos){producto ->
             CardVideo(
-                /*
-                modifier : Modifier = Modifier,
-                type : CardVideoType = CardVideoType.Anime,
-                form : CardVideoForm = CardVideoForm.Square,
-                size : CardVideoSize = CardVideoSize.Medium,
-                img : Int? = null,
-                */ 
                 title = producto,
-                //description : String? = null,
-                //ranking : Double? = null,
-                //duration : Double? = null
-            )
+            ){
+                navController?.navigate(Route.ProductDetail.nameRoute)
+            }
         }
     }
 }

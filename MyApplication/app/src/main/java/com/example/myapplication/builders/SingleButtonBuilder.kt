@@ -49,7 +49,7 @@ fun getSingleButtonFontSize(size : SingleButtonSize) : TextUnit{
 fun getSingleButtonSizeBase(size : SingleButtonSize) : Float{
     return when (size) {
         SingleButtonSize.Small -> 1f
-        SingleButtonSize.Medium -> 1/3f
+        SingleButtonSize.Medium -> 0.3f
         SingleButtonSize.Large -> 3f
     }
 }
@@ -78,7 +78,7 @@ fun getSingleButtonDimension(form : SingleButtonForm, size : SingleButtonSize) :
 fun getSingleButtonColors(type : SingleButtonType) : SingleButtonColor{
     return when (type) {
         SingleButtonType.Play -> SingleButtonColor(
-            backgroundColor = Color(0xFFFF6400),
+            backgroundColor = Color(0x99FF6400),
             contentColor = Color(0xFFFFFFFF)
         )
         SingleButtonType.Watch -> SingleButtonColor(

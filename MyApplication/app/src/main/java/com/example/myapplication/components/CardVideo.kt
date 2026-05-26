@@ -33,6 +33,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.clickable
 import com.example.myapplication.R
 
 @Composable
@@ -45,7 +46,8 @@ fun CardVideo(
     title : String? = null,
     description : String? = null,
     ranking : Double? = null,
-    duration : Double? = null
+    duration : Double? = null,
+    onClick : () -> Unit
 ){
     val padding = 8.dp
     val cardVideoColor : CardVideoColor = getCardVideoColors(type)
@@ -56,7 +58,9 @@ fun CardVideo(
         background(cardVideoColor.backgroundColor).
         fillMaxWidth(cardVideoDimensions.width).
         aspectRatio(cardVideoDimensions.aspectRatio).
-        clip(cardVideoDimensions.shape)
+        clip(cardVideoDimensions.shape).
+        clickable { onClick() }
+
     Box(
         modifier = actualModifier){
         Image(
@@ -64,6 +68,14 @@ fun CardVideo(
             contentDescription = "Card Video Image",
             modifier = modifier.fillMaxWidth()
         )
+        if (form == CardVideoForm.Rectangle) {
+                SingleButton(
+                    // Change to Bottom Right
+                    text = "Play",
+                    type = SingleButtonType.Watch,
+                    form = SingleButtonForm.Rectangle,
+                ){}
+            }
         Column(
             modifier = modifier.
                 align(Alignment.BottomEnd).
@@ -87,13 +99,6 @@ fun CardVideo(
                 Spacer(modifier = modifier.size(2.dp))
                 duration?.let {
                     Text(text = duration.toString())
-                }
-                if(form == CardVideoForm.Rectangle){
-                    SingleButton(
-                        text = "Play",
-                        type = SingleButtonType.Watch,
-                        form = SingleButtonForm.Rectangle,
-                    ){}
                 }
             }
         }

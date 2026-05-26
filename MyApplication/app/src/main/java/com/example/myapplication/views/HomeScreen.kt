@@ -5,8 +5,6 @@ import com.example.myapplication.builders.SingleButtonType
 import com.example.myapplication.builders.SingleButtonSize
 import com.example.myapplication.builders.CardVideoType
 import com.example.myapplication.builders.CardVideoForm
-import com.example.myapplication.components.AppBottomBar
-import com.example.myapplication.components.AppTopBar
 import com.example.myapplication.components.PrimaryButtons
 import com.example.myapplication.components.SearchBar
 import com.example.myapplication.components.CardVideoList
@@ -35,7 +33,7 @@ import androidx.compose.runtime.setValue
 import androidx.navigation.NavController
 
 @Composable
-fun HomeScreen(navController : NavController){
+fun HomeScreen(navController: NavController? = null){
     var text by remember {mutableStateOf("")}
     val productos = listOf(
         "articulo1",
@@ -51,7 +49,7 @@ fun HomeScreen(navController : NavController){
         "articulo11",
         "articulo12",
     )
-    CardVideoList(productos = productos)
+    CardVideoList(productos = productos, navController = navController)
     /*
     Column{
         SingleButton(
