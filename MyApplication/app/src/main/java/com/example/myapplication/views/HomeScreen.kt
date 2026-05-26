@@ -1,14 +1,13 @@
 package com.example.myapplication.views
 
+import com.example.myapplication.models.repository.getListMovieDetails
+import com.example.myapplication.models.data.MovieDetails
 import com.example.myapplication.builders.SingleButtonForm
 import com.example.myapplication.builders.SingleButtonType
 import com.example.myapplication.builders.SingleButtonSize
 import com.example.myapplication.builders.CardVideoType
 import com.example.myapplication.builders.CardVideoForm
-import com.example.myapplication.components.PrimaryButtons
-import com.example.myapplication.components.SearchBar
 import com.example.myapplication.components.CardVideoList
-import com.example.myapplication.components.ProductCard
 import com.example.myapplication.components.SingleButton
 import com.example.myapplication.components.CardVideo
 import androidx.compose.runtime.Composable
@@ -33,23 +32,14 @@ import androidx.compose.runtime.setValue
 import androidx.navigation.NavController
 
 @Composable
-fun HomeScreen(navController: NavController? = null){
+fun HomeScreen(navController: NavController? = null, modifier : Modifier = Modifier){
     var text by remember {mutableStateOf("")}
-    val productos = listOf(
-        "articulo1",
-        "articulo2",
-        "articulo3",
-        "articulo4",
-        "articulo5",
-        "articulo6",
-        "articulo7",
-        "articulo8",
-        "articulo9",
-        "articulo10",
-        "articulo11",
-        "articulo12",
+    val productos : List<MovieDetails> = getListMovieDetails() 
+    CardVideoList(
+        modifier = modifier,
+        productos = productos,
+        navController = navController
     )
-    CardVideoList(productos = productos, navController = navController)
     /*
     Column{
         SingleButton(

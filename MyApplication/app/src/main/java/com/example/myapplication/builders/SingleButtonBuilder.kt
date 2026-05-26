@@ -48,8 +48,8 @@ fun getSingleButtonFontSize(size : SingleButtonSize) : TextUnit{
 
 fun getSingleButtonSizeBase(size : SingleButtonSize) : Float{
     return when (size) {
-        SingleButtonSize.Small -> 1f
-        SingleButtonSize.Medium -> 0.3f
+        SingleButtonSize.Small -> 0.18f
+        SingleButtonSize.Medium -> 1f
         SingleButtonSize.Large -> 3f
     }
 }

@@ -6,6 +6,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.composable
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import com.example.myapplication.views.HomeScreen
 import com.example.myapplication.views.ProductDetailScreen
@@ -35,7 +36,10 @@ fun AppNavigation(){
             startDestination = Route.Home.nameRoute
         ){
             composable(Route.Home.nameRoute){
-                HomeScreen(navController = navController)
+                HomeScreen(
+                    modifier = Modifier.padding(innerPadding),
+                    navController = navController
+                )
                 nameView = "Home"
             }
             composable(Route.Cart.nameRoute){
