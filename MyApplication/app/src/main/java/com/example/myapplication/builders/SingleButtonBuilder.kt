@@ -28,8 +28,8 @@ sealed class SingleButtonSize{
 }
 
 data class SingleButtonDimension(
-    val width : Dp,
-    val height : Dp,
+    val width : Float,
+    val height : Float,
     val shape : Shape
 )
 
@@ -46,11 +46,11 @@ fun getSingleButtonFontSize(size : SingleButtonSize) : TextUnit{
     }
 }
 
-fun getSingleButtonSizeBase(size : SingleButtonSize) : Dp{
+fun getSingleButtonSizeBase(size : SingleButtonSize) : Float{
     return when (size) {
-        SingleButtonSize.Small -> 30.dp
-        SingleButtonSize.Medium -> 80.dp
-        SingleButtonSize.Large -> 62.dp
+        SingleButtonSize.Small -> 1f
+        SingleButtonSize.Medium -> 1/3f
+        SingleButtonSize.Large -> 3f
     }
 }
 
@@ -68,7 +68,7 @@ fun getSingleButtonDimension(form : SingleButtonForm, size : SingleButtonSize) :
             RoundedCornerShape(3.dp)
         )
         SingleButtonForm.Rectangle -> SingleButtonDimension(
-            base * 3,
+            base * 2,
             base,
             RoundedCornerShape(8.dp)
         )

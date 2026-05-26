@@ -15,6 +15,9 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -32,12 +35,12 @@ import com.example.myapplication.builders.getSingleButtonDimension
 fun SingleButton(
     modifier: Modifier = Modifier,
     text: String? = null,
-    onClick: () -> Unit,
     type: SingleButtonType = SingleButtonType.Play,
     form: SingleButtonForm = SingleButtonForm.Rectangle,
     size: SingleButtonSize = SingleButtonSize.Medium,
     icon: Int? = null,
-    enabled: Boolean = true
+    enabled: Boolean = true,
+    onClick: () -> Unit
 ) {
     val buttonColors : SingleButtonColor = getSingleButtonColors(type)
     val buttonDimension : SingleButtonDimension = getSingleButtonDimension(form ,size)
@@ -50,8 +53,9 @@ fun SingleButton(
             shape = shape 
         )
         .padding(3.dp)
-        .width(buttonDimension.width)
-        .height(buttonDimension.height)
+        .aspectRatio(buttonDimension.width)
+        //.fillMaxWidth(buttonDimension.width)
+        //.fillMaxHeight(buttonDimension.height)
 
     Button(
         onClick = onClick,

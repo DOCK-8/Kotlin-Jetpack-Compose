@@ -1,7 +1,9 @@
 package com.example.myapplication.components
 
 import androidx.compose.runtime.Composable
-//falta terminar
+import com.example.myapplication.components.SingleButton
+import com.example.myapplication.builders.SingleButtonType
+import com.example.myapplication.builders.SingleButtonForm
 import com.example.myapplication.builders.getCardVideoColors
 import com.example.myapplication.builders.getCardVideoDimensions
 import com.example.myapplication.builders.CardVideoColor
@@ -85,6 +87,13 @@ fun CardVideo(
                 Spacer(modifier = modifier.size(2.dp))
                 duration?.let {
                     Text(text = duration.toString())
+                }
+                if(form == CardVideoForm.Rectangle){
+                    SingleButton(
+                        text = "Play",
+                        type = SingleButtonType.Watch,
+                        form = SingleButtonForm.Rectangle,
+                    ){}
                 }
             }
         }

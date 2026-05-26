@@ -1,14 +1,15 @@
-package com.example.myapplication
+package com.example.myapplication.views
 
 import com.example.myapplication.builders.SingleButtonForm
 import com.example.myapplication.builders.SingleButtonType
+import com.example.myapplication.builders.SingleButtonSize
 import com.example.myapplication.builders.CardVideoType
 import com.example.myapplication.builders.CardVideoForm
 import com.example.myapplication.components.AppBottomBar
 import com.example.myapplication.components.AppTopBar
 import com.example.myapplication.components.PrimaryButtons
 import com.example.myapplication.components.SearchBar
-import com.example.myapplication.components.ProductList
+import com.example.myapplication.components.CardVideoList
 import com.example.myapplication.components.ProductCard
 import com.example.myapplication.components.SingleButton
 import com.example.myapplication.components.CardVideo
@@ -31,9 +32,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.navigation.NavController
 
 @Composable
-fun HomeScreen(){
+fun HomeScreen(navController : NavController){
     var text by remember {mutableStateOf("")}
     val productos = listOf(
         "articulo1",
@@ -41,7 +43,36 @@ fun HomeScreen(){
         "articulo3",
         "articulo4",
         "articulo5",
+        "articulo6",
+        "articulo7",
+        "articulo8",
+        "articulo9",
+        "articulo10",
+        "articulo11",
+        "articulo12",
     )
+    CardVideoList(productos = productos)
+    /*
+    Column{
+        SingleButton(
+            type = SingleButtonType.Play,
+            form = SingleButtonForm.Circle,
+            size = SingleButtonSize.Medium
+        ) {}
+        SingleButton(
+            text = "Test",
+            type = SingleButtonType.Play,
+            form = SingleButtonForm.Square,
+            size = SingleButtonSize.Medium
+        ) {}
+        SingleButton(
+            text = "Test",
+            type = SingleButtonType.Play,
+            form = SingleButtonForm.Rectangle,
+            size = SingleButtonSize.Medium
+        ) {}
+    }
+    */
     /*
     Row(
         modifier = Modifier.fillMaxSize()
@@ -50,7 +81,7 @@ fun HomeScreen(){
     CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, type = CardVideoType.Serie)
     } 
     */
-    CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, form = CardVideoForm.Rectangle)
+    //CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, form = CardVideoForm.Rectangle)
 
     /*
     Scaffold(
