@@ -8,6 +8,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.navigation.NavController
+// Card Video Import
+import com.example.myapplication.components.CardVideo
+import com.example.myapplication.builders.CardVideoSize
+import com.example.myapplication.builders.CardVideoSize.Big
+// End
 
 @Composable
 fun ProductDetailScreen(){
@@ -16,6 +21,9 @@ fun ProductDetailScreen(){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ){
-        Text(text = "Detalle del Producto")
+        CardVideo(
+            title = "Detalle del producto",
+            size = Big
+        ){}
     }
 }

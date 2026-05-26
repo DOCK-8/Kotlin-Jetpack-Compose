@@ -18,6 +18,7 @@ sealed class CardVideoForm {
 sealed class CardVideoSize {
     object Small : CardVideoSize()
     object Medium : CardVideoSize()
+    object Big : CardVideoSize()
 }
 
 data class CardVideoDimension(
@@ -50,6 +51,7 @@ fun getCardVideoSize(size : CardVideoSize) : Float{
     return when(size) {
         CardVideoSize.Small -> 0.3f
         CardVideoSize.Medium -> 0.5f
+        CardVideoSize.Big -> 1f
     }
 
 }
