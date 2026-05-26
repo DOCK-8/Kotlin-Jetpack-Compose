@@ -16,6 +16,6 @@ fun CartScreen(){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ){
-        Text(text = "Carrito de Compras")
+        // Add VideoCards
     }
 }

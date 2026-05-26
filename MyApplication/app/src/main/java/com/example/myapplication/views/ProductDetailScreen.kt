@@ -13,17 +13,34 @@ import com.example.myapplication.components.CardVideo
 import com.example.myapplication.builders.CardVideoSize
 import com.example.myapplication.builders.CardVideoSize.Big
 // End
+// Single Button Import
+import com.example.myapplication.components.SingleButton
+import com.example.myapplication.builders.SingleButtonForm.Rectangle
+import com.example.myapplication.builders.SingleButtonSize.Medium
+import com.example.myapplication.builders.SingleButtonType.Watch
+// End
+// Data MovieDetails
+import com.example.myapplication.models.data.MovieDetails
+// End
 
 @Composable
-fun ProductDetailScreen(){
+fun ProductDetailScreen(movieDetails : MovieDetails){
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ){
         CardVideo(
-            title = "Detalle del producto",
+            title = movieDetails.primaryTitle,
             size = Big
         ){}
+        SingleButton(
+            text = "Agregar al carrito",
+            type = Watch,
+            form = Rectangle,
+            size = Medium
+        ){
+
+        }
     }
 }
