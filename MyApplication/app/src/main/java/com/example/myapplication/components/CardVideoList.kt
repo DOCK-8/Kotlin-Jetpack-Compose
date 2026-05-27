@@ -24,6 +24,7 @@ import com.example.myapplication.navigate.Route.ProductDetail
 // End
 // Data MovieDetails
 import com.example.myapplication.models.data.MovieDetails
+import com.example.myapplication.models.data.store
 // End
 
 
@@ -51,6 +52,7 @@ fun CardVideoList(
             CardVideo(
                 title = producto.primaryTitle,
             ){
+                store.cartSelected = producto
                 navController?.navigate(Route.ProductDetail.nameRoute)
             }
         }

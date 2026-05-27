@@ -20,18 +20,18 @@ import com.example.myapplication.builders.SingleButtonSize.Medium
 import com.example.myapplication.builders.SingleButtonType.Watch
 // End
 // Data MovieDetails
-import com.example.myapplication.models.data.MovieDetails
+import com.example.myapplication.models.data.store
 // End
 
 @Composable
-fun ProductDetailScreen(movieDetails : MovieDetails){
+fun ProductDetailScreen(){
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ){
         CardVideo(
-            title = movieDetails.primaryTitle,
+            title = store.cartSelected?.primaryTitle ?: "Titulo",
             size = Big
         ){}
         SingleButton(
@@ -40,7 +40,9 @@ fun ProductDetailScreen(movieDetails : MovieDetails){
             form = Rectangle,
             size = Medium
         ){
-
+            store.cartSelected?.let{
+                store.carts+=it
+            }
         }
     }
 }

@@ -8,6 +8,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.navigation.NavController
+// Add Card List
+import com.example.myapplication.components.CardVideoList
+// End
+// Add data Card Live
+import com.example.myapplication.models.data.store
+// End
 
 @Composable
 fun CartScreen(){
@@ -16,6 +22,8 @@ fun CartScreen(){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ){
-        // Add VideoCards
+        CardVideoList(
+            productos = store.carts
+        )
     }
 }
