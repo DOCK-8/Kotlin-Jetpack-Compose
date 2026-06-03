@@ -47,5 +47,20 @@ fun AppBottomBar(navController : NavController){
             Text("Carrito")
         }
         )
+        NavigationBarItem(
+        selected = false,
+        onClick = {
+            navController.navigate(Route.Profile.nameRoute)
+        },
+        icon = {
+            Icon(
+                Icons.Default.ShoppingCart,
+                contentDescription = null
+            )
+        },
+        label = {
+            Text("Perfil")
+        }
+        )
     }
 }

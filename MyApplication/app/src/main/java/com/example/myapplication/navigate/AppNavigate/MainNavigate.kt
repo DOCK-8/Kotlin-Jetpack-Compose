@@ -1,9 +1,14 @@
-package com.example.myapplication.navigate
+package com.example.myapplication.navigate.AppNavigate
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+
+// Routes
+import com.example.myapplication.navigate.Route
+// End
+
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -11,6 +16,7 @@ import androidx.compose.material3.Scaffold
 import com.example.myapplication.views.HomeScreen
 import com.example.myapplication.views.ProductDetailScreen
 import com.example.myapplication.views.CartScreen
+import com.example.myapplication.views.User.ProfileScreen
 // AppBottomBar and AppTopBar 
 import com.example.myapplication.components.AppBottomBar
 import com.example.myapplication.components.AppTopBar
@@ -23,7 +29,7 @@ import androidx.compose.runtime.remember
 // End
 
 @Composable
-fun AppNavigation(){
+fun MainNavigate(){
     val navController = rememberNavController()
     var nameView by remember { mutableStateOf("Home") }
     Scaffold(
@@ -49,6 +55,10 @@ fun AppNavigation(){
             composable(Route.ProductDetail.nameRoute){
                 ProductDetailScreen()
                 nameView = "Detalle del producto"
+            }
+            composable(Route.Profile.nameRoute){
+                ProfileScreen()
+                nameView = "Perfil del usuario"
             }
         }
     }
