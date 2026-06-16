@@ -1,5 +1,6 @@
 package com.example.myapplication.ViewModel.Auth
 
+import com.example.myapplication.di.Singletons
 import com.example.myapplication.models.repository.Auth.RegisterRepository
 // VM
 import androidx.lifecycle.ViewModel
@@ -7,7 +8,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 // End
 
-class RegisterViewModel : ViewModel(){
+class RegisterViewModel(
+    private val registerRepository: RegisterRepository = Singletons.Repositories.registerRepository
+) : ViewModel(){
     private val _name = MutableStateFlow<String>("")
     private val _email = MutableStateFlow<String>("")
     private val _password = MutableStateFlow<String>("")
@@ -24,7 +27,7 @@ class RegisterViewModel : ViewModel(){
     fun onChangePassword(password : String){
         _password.value = password
     }
-    fun onRegisterUser(){
-       RegisterRepository.addUserDB(name.value,email.value,password.value) 
-    }
+     fun onRegisterUser(){
+         registerRepository.addUserDB(name.value,email.value,password.value)
+     }
 }

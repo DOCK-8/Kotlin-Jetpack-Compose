@@ -3,13 +3,16 @@ package com.example.myapplication.ViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myapplication.models.data.MovieDetails
-import com.example.myapplication.models.repository.getListMovieDetails
+import com.example.myapplication.models.repository.IMovieDetailsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import com.example.myapplication.di.Singletons
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel(
+    private val movieRepo: IMovieDetailsRepository = Singletons.Repositories.movieDetailsRepository
+) : ViewModel() {
     private val _movieCatalog = MutableStateFlow<List<MovieDetails>>(emptyList())
     val movieCatalog: StateFlow<List<MovieDetails>> = _movieCatalog.asStateFlow()
 
@@ -19,8 +22,7 @@ class HomeViewModel : ViewModel() {
 
     private fun loadMovies() {
         viewModelScope.launch {
-            // In this simple project repository is a function; replace with DI if available
-            val movies = getListMovieDetails()
+            val movies = movieRepo.getMovies()
             _movieCatalog.value = movies
         }
     }

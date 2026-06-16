@@ -1,5 +1,6 @@
 package com.example.myapplication.ViewModel.Auth
 
+import com.example.myapplication.di.Singletons
 import com.example.myapplication.models.repository.Auth.SessionRepository
 import com.example.myapplication.models.data.User
 // VM
@@ -8,7 +9,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 // End
 
-class LoginViewModel : ViewModel(){
+class LoginViewModel(
+    private val sessionRepository: SessionRepository = Singletons.Repositories.sessionRepository
+) : ViewModel(){
     private val _name = MutableStateFlow("")
     private val _password = MutableStateFlow("")
     private val _message = MutableStateFlow("")
@@ -24,7 +27,7 @@ class LoginViewModel : ViewModel(){
     }
 
     fun loginUser() : Boolean{
-       val status = SessionRepository.userDataVerificate(name = name.value, password = password.value) 
+       val status = sessionRepository.userDataVerificate(name = name.value, password = password.value)
         if (status)
             _message.value = "Session Succesly"
         else
