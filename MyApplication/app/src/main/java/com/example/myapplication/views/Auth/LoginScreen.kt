@@ -9,7 +9,7 @@ import com.example.myapplication.navigate.Route
 // End
 // ViewModel
 import com.example.myapplication.ViewModel.Auth.LoginViewModel
-import com.example.myapplication.ViewModel.Auth.SessionViewModel
+import com.example.myapplication.session.SessionManager
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -44,7 +44,7 @@ fun LoginScreen(navController : NavController){
             text = "Login",
         ){
             if(viewModel.loginUser())
-                SessionViewModel.login()
+                SessionManager.login()
         }
         SingleButton(
             //modifier = Modifier,

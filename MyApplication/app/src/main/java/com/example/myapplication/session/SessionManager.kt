@@ -1,11 +1,10 @@
-package com.example.myapplication.ViewModel.Auth
+package com.example.myapplication.session
 
-import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import com.example.myapplication.models.repository.Auth.UserSessionRepository
 
-class SessionViewModel : ViewModel() {
+object SessionManager {
     private val _logged = MutableStateFlow(false)
     val logged = _logged.asStateFlow()
 

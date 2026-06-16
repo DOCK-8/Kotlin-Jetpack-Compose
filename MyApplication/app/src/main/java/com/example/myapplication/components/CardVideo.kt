@@ -15,7 +15,6 @@ import com.example.myapplication.builders.CardVideoType
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.foundation.Image
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.BorderStroke
@@ -37,6 +36,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.clickable
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Surface
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.TileMode
+import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.layout.fillMaxSize
 import com.example.myapplication.R
 
 @Composable
@@ -55,65 +62,69 @@ fun CardVideo(
     val padding = 8.dp
     val cardVideoColor : CardVideoColor = getCardVideoColors(type)
     val cardVideoDimensions : CardVideoDimension = getCardVideoDimensions(form, size)
-    val actualModifier : Modifier = modifier.
-        padding(padding).
-        border(3.dp, cardVideoColor.borderColor, cardVideoDimensions.shape).
-        background(cardVideoColor.backgroundColor).
-        fillMaxWidth(cardVideoDimensions.width).
-        aspectRatio(cardVideoDimensions.aspectRatio).
-        clip(cardVideoDimensions.shape).
-        clickable { onClick() }
-    //Test Trash to finally
-    var idI : Int = when(form){
+    val actualModifier : Modifier = modifier
+        .padding(padding)
+        .fillMaxWidth(cardVideoDimensions.width)
+        .aspectRatio(cardVideoDimensions.aspectRatio)
+        .clip(cardVideoDimensions.shape)
+    // Select drawable based on form (fallbacks)
+    val idI : Int = when(form){
         CardVideoForm.Square -> R.drawable.test
         CardVideoForm.Rectangle -> R.drawable.testh
     }
-    //End
 
-    Box(
-        modifier = actualModifier){
-        Image(
-            painter = painterResource(id = idI),
-            contentDescription = "Card Video Image",
-            contentScale = ContentScale.Crop,
-            modifier = modifier.fillMaxWidth()
-        )
-        Row(
-            modifier = modifier.
-                align(Alignment.BottomEnd).
-                fillMaxWidth()
-        ){
-            Column(
-                modifier = modifier
+    Card(
+        modifier = actualModifier.clickable { onClick() },
+        elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
+        shape = cardVideoDimensions.shape,
+        colors = CardDefaults.cardColors(containerColor = cardVideoColor.backgroundColor),
+        border = BorderStroke(1.dp, cardVideoColor.borderColor)
+    ) {
+        Box(modifier = Modifier.fillMaxSize()){
+            Image(
+                painter = painterResource(id = idI),
+                contentDescription = "Card Video Image",
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize()
+            )
+
+            // Bottom overlay for text
+            Surface(
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .fillMaxWidth(),
+                color = Color.Black.copy(alpha = 0.45f)
             ){
-                title?.let {
-                    Text(text = title)
-                }
-                Spacer(modifier = modifier.size(2.dp))
-                description?.let {
-                    Text(text = description)
-                }
-                Row{
-                    Icon(
-                        painter = painterResource(id = R.drawable.star),
-                        contentDescription = "Ranking",
-                    )
-                    ranking?.let {
-                        Text(text = ranking.toString())
+                Column(modifier = Modifier.padding(8.dp)){
+                    title?.let {
+                        Text(text = title, style = MaterialTheme.typography.titleMedium, color = Color.White)
                     }
-                    Spacer(modifier = modifier.size(2.dp))
-                    duration?.let {
-                        Text(text = duration.toString())
+                    description?.let {
+                        Text(text = description, style = MaterialTheme.typography.bodySmall, color = Color.White)
+                    }
+                    Row(verticalAlignment = Alignment.CenterVertically){
+                        Icon(
+                            painter = painterResource(id = R.drawable.star),
+                            contentDescription = "Ranking",
+                        )
+                        ranking?.let {
+                            Text(text = String.format("%.1f", it), color = Color.White)
+                        }
+                        Spacer(modifier = Modifier.size(8.dp))
+                        duration?.let {
+                            Text(text = "${it.toInt()} min", color = Color.White)
+                        }
                     }
                 }
             }
+
             if (form == CardVideoForm.Rectangle) {
                 SingleButton(
-                    // Change to Bottom Right
                     text = "Play",
                     type = SingleButtonType.Watch,
                     form = SingleButtonForm.Rectangle,
                     size = SingleButtonSize.Small,
+                    modifier = Modifier.align(Alignment.BottomEnd).padding(8.dp)
                 ){}
             }
         }

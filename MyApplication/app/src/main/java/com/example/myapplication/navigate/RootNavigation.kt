@@ -8,15 +8,15 @@ import androidx.navigation.compose.composable
 import com.example.myapplication.navigate.AuthNavigate.LoginNavigate
 import com.example.myapplication.navigate.AppNavigate.MainNavigate
 // End
-// Singleton
-import com.example.myapplication.ViewModel.Auth.SessionViewModel
+// Session singleton
+import com.example.myapplication.session.SessionManager
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 // End
 
 @Composable
 fun RootNavigation(){
-    val logged by SessionViewModel.logged.collectAsState()
+    val logged by SessionManager.logged.collectAsState()
     if(logged)
         MainNavigate()
     else

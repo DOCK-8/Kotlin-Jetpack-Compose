@@ -1,6 +1,8 @@
 package com.example.myapplication.views
 
-import com.example.myapplication.models.repository.getListMovieDetails
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.runtime.collectAsState
+import com.example.myapplication.ViewModel.HomeViewModel
 import com.example.myapplication.models.data.MovieDetails
 import com.example.myapplication.builders.SingleButtonForm
 import com.example.myapplication.builders.SingleButtonType
@@ -34,7 +36,8 @@ import androidx.navigation.NavController
 @Composable
 fun HomeScreen(navController: NavController? = null, modifier : Modifier = Modifier){
     var text by remember {mutableStateOf("")}
-    val productos : List<MovieDetails> = getListMovieDetails() 
+    val vm: HomeViewModel = viewModel()
+    val productos by vm.movieCatalog.collectAsState()
     CardVideoList(
         modifier = modifier,
         productos = productos,
