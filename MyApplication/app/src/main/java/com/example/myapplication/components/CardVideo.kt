@@ -67,8 +67,8 @@ fun CardVideo(
         .fillMaxWidth(cardVideoDimensions.width)
         .aspectRatio(cardVideoDimensions.aspectRatio)
         .clip(cardVideoDimensions.shape)
-    // Select drawable based on form (fallbacks)
-    val idI : Int = when(form){
+    // Select drawable based on provided img or form (fallbacks)
+    val idI : Int = img ?: when(form){
         CardVideoForm.Square -> R.drawable.test
         CardVideoForm.Rectangle -> R.drawable.testh
     }

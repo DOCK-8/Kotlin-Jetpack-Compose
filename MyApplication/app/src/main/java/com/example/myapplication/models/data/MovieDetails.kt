@@ -8,6 +8,7 @@ data class MovieDetails(
     val type: String,
     val description: String,
     val primaryImage: String? = null,
+    val primaryImageRes: Int? = null,
     val thumbnails: List<Thumbnail>,
     val trailer: String? = null,
     val contentRating: String? = null,

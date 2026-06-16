@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.layout.ContentScale
+import coil.compose.AsyncImage
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Icon
@@ -37,12 +39,23 @@ fun MovieHeader(
             .height((dimensions.height * 400).dp),
         contentAlignment = Alignment.Center
     ) {
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height((dimensions.height * 400).dp)
-                .background(Color.DarkGray)
-        )
+        if (movie.primaryImageRes != null) {
+            AsyncImage(
+                model = movie.primaryImageRes,
+                contentDescription = movie.primaryTitle,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height((dimensions.height * 400).dp)
+            )
+        } else {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height((dimensions.height * 400).dp)
+                    .background(Color.DarkGray)
+            )
+        }
 
         // Gradient overlay
         Box(
@@ -84,7 +97,7 @@ fun MovieHeader(
             SingleButton(
                 type = com.example.myapplication.builders.SingleButtonType.Play,
                 form = com.example.myapplication.builders.SingleButtonForm.Circle,
-                size = com.example.myapplication.builders.SingleButtonSize.Medium
+                size = com.example.myapplication.builders.SingleButtonSize.Small
             ) {
                 onPlayClick()
             }
