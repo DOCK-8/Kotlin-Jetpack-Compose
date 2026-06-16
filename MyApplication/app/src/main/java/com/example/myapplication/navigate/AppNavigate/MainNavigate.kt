@@ -17,7 +17,7 @@ import com.example.myapplication.views.HomeScreen
 import com.example.myapplication.views.ProductDetailScreen
 import com.example.myapplication.views.CartScreen
 import com.example.myapplication.views.User.ProfileScreen
-// AppBottomBar and AppTopBar 
+// AppBottomBar and AppTopBar
 import com.example.myapplication.components.AppBottomBar
 import com.example.myapplication.components.AppTopBar
 // End
@@ -49,15 +49,24 @@ fun MainNavigate(){
                 nameView = "Home"
             }
             composable(Route.Cart.nameRoute){
-                CartScreen()
+                CartScreen(
+                    modifier = Modifier.padding(innerPadding),
+                    navController = navController
+                )
                 nameView = "Carrito"
             }
             composable(Route.ProductDetail.nameRoute){
-                ProductDetailScreen()
+                ProductDetailScreen(
+                    modifier = Modifier.padding(innerPadding),
+                    navController = navController
+                )
                 nameView = "Detalle del producto"
             }
             composable(Route.Profile.nameRoute){
-                ProfileScreen()
+                ProfileScreen(
+                    modifier = Modifier.padding(innerPadding),
+                    navController = navController
+                )
                 nameView = "Perfil del usuario"
             }
         }

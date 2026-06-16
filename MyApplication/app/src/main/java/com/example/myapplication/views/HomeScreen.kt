@@ -1,104 +1,104 @@
 package com.example.myapplication.views
 
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.compose.runtime.collectAsState
-import com.example.myapplication.ViewModel.HomeViewModel
-import com.example.myapplication.models.data.MovieDetails
-import com.example.myapplication.builders.SingleButtonForm
-import com.example.myapplication.builders.SingleButtonType
-import com.example.myapplication.builders.SingleButtonSize
-import com.example.myapplication.builders.CardVideoType
-import com.example.myapplication.builders.CardVideoForm
-import com.example.myapplication.components.CardVideoList
-import com.example.myapplication.components.SingleButton
-import com.example.myapplication.components.CardVideo
 import androidx.compose.runtime.Composable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.example.myapplication.ViewModel.HomeViewModel
+import com.example.myapplication.components.MovieHeader
+import com.example.myapplication.builders.MovieHeaderSize
+import com.example.myapplication.components.SearchBar
+import com.example.myapplication.components.MovieSlider
+import com.example.myapplication.components.MovieGrid
 
 @Composable
-fun HomeScreen(navController: NavController? = null, modifier : Modifier = Modifier){
-    var text by remember {mutableStateOf("")}
+fun HomeScreen(navController: NavController? = null, modifier: Modifier = Modifier){
     val vm: HomeViewModel = viewModel()
     val productos by vm.movieCatalog.collectAsState()
-    CardVideoList(
-        modifier = modifier,
-        productos = productos,
-        navController = navController
-    )
-    /*
-    Column{
-        SingleButton(
-            type = SingleButtonType.Play,
-            form = SingleButtonForm.Circle,
-            size = SingleButtonSize.Medium
-        ) {}
-        SingleButton(
-            text = "Test",
-            type = SingleButtonType.Play,
-            form = SingleButtonForm.Square,
-            size = SingleButtonSize.Medium
-        ) {}
-        SingleButton(
-            text = "Test",
-            type = SingleButtonType.Play,
-            form = SingleButtonForm.Rectangle,
-            size = SingleButtonSize.Medium
-        ) {}
-    }
-    */
-    /*
-    Row(
-        modifier = Modifier.fillMaxSize()
-    ) {
-    CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, type = CardVideoType.Movie)
-    CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, type = CardVideoType.Serie)
-    } 
-    */
-    //CardVideo(title = "Title", description = "Description", ranking = 4.5, duration = 120.0, form = CardVideoForm.Rectangle)
+    var searchQuery by remember { mutableStateOf("") }
 
-    /*
-    Scaffold(
-        topBar = {AppTopBar()},
-        bottomBar = {AppBottomBar()},
-        modifier = Modifier.fillMaxSize()
-    ){ innerPadding ->
-        Column ( modifier = Modifier.padding(innerPadding)){
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
-        ){
-            SearchBar(
-                value = text,
-                onValueChange = {text = it},
-                modifier = Modifier.weight(1f)
-            )
-            Spacer(modifier = Modifier.width(8.dp))
-            PrimaryButtons(
-                text = " Buscar",
-                modifier = Modifier.wrapContentWidth(),
-                onClick = {}
-            )                        }
-            Spacer(modifier = Modifier.height(16.dp))
-            ProductList(productos = productos)
+    val filteredMovies = if (searchQuery.isEmpty()) {
+        productos
+    } else {
+        productos.filter {
+            it.primaryTitle.contains(searchQuery, ignoreCase = true)
         }
     }
-   */ 
+
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color(0xFF0F0F0F))
+            .verticalScroll(rememberScrollState())
+    ) {
+        // Featured movie header
+        if (productos.isNotEmpty()) {
+            MovieHeader(
+                movie = productos.first(),
+                size = MovieHeaderSize.Large,
+                onPlayClick = {}
+            )
+        }
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // Search bar
+        SearchBar(
+            value = searchQuery,
+            onValueChange = { searchQuery = it },
+            placeholder = "Buscar películas..."
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // Trending section
+        if (productos.isNotEmpty()) {
+            Text(
+                text = "Tendencias",
+                style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
+            Spacer(modifier = Modifier.height(12.dp))
+            MovieSlider(
+                movies = productos.take(6),
+                navController = navController
+            )
+        }
+
+        Spacer(modifier = Modifier.height(32.dp))
+
+        // Grid of all movies
+        Text(
+            text = "Todas las películas",
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier.padding(horizontal = 16.dp)
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+
+        MovieGrid(
+            movies = filteredMovies,
+            navController = navController,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(bottom = 24.dp)
+        )
+    }
 }

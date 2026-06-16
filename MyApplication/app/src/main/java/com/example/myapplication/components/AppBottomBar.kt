@@ -7,6 +7,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Text
 import androidx.navigation.NavController
 // import Routes
@@ -54,7 +55,7 @@ fun AppBottomBar(navController : NavController){
         },
         icon = {
             Icon(
-                Icons.Default.ShoppingCart,
+                Icons.Default.Person,
                 contentDescription = null
             )
         },

@@ -24,7 +24,10 @@ import com.example.myapplication.navigate.Route.ProductDetail
 // End
 // Data MovieDetails
 import com.example.myapplication.models.data.MovieDetails
-import com.example.myapplication.models.data.store
+// End
+// ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.myapplication.ViewModel.ProductDetailViewModel
 // End
 
 
@@ -34,6 +37,8 @@ fun CardVideoList(
     productos : List<MovieDetails>,
     navController : NavController? = null
 ){
+    val detailVm: ProductDetailViewModel = viewModel()
+
     LazyVerticalGrid(
         columns = GridCells.Adaptive(minSize = 150.dp),
         modifier = modifier,
@@ -52,7 +57,7 @@ fun CardVideoList(
             CardVideo(
                 title = producto.primaryTitle,
             ){
-                store.cartSelected = producto
+                detailVm.setSelectedMovie(producto)
                 navController?.navigate(Route.ProductDetail.nameRoute)
             }
         }
