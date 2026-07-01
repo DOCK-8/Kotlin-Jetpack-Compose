@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blackTransparent">#AA000000</color>
+    <color name="richMahogany">#FF230007</color>
+    <color name="goldenGlow">#FFD7CF07</color>
+    <color name="amberEarth">#FFD98324</color>
+    <color name="inferno">#FFA40606</color>
+    <color name="blackCherry">#FF5A0002</color>
 </resources>
