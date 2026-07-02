@@ -15,51 +15,23 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.material3.Text
 import com.example.myapplication.R
 
+import com.example.myapplication.components.MovieCard.MovieCard
+
 @Composable
 fun rowCards(){
+    val listTest = listOf("A","B","C","D","E")
     LazyRow(
         modifier = Modifier
-        .aspectRatio(1f)
+        .aspectRatio(16f/9f)
         .fillMaxHeight()
     ){
-        item{
-            Box(
+        items(listTest){
+            movie -> MovieCard(
+                textTest = movie,
                 modifier = Modifier
-                .background(colorResource(id = R.color.black))
-                .fillMaxWidth()
-                .aspectRatio(1f)
-            ){
-                Text(
-                    text = "Movie Grid",
-                    color = colorResource(id = R.color.white)
-                )
-            } 
-        }
-        item{
-            Box(
-                modifier = Modifier
-                .background(colorResource(id = R.color.goldenGlow))
-                .fillMaxWidth()
-                .aspectRatio(1f)
-            ){
-                Text(
-                    text = "Movie Grid",
-                    color = colorResource(id = R.color.white)
-                )
-            } 
-        }
-        item{
-            Box(
-                modifier = Modifier
-                .background(colorResource(id = R.color.inferno))
-                .fillMaxWidth()
-                .aspectRatio(1f)
-            ){
-                Text(
-                    text = "Movie Grid",
-                    color = colorResource(id = R.color.white)
-                )
-            } 
+                    .fillMaxWidth()
+                    .aspectRatio(1f)
+            )
         }
     }
 }
