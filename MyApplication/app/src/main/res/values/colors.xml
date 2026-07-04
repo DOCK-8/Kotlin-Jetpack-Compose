@@ -7,7 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blackTransparent">#AA000000</color>
+    <color name="blackTransparent">#88000000</color>
+    <color name="transparent">#33000000</color>
     <color name="richMahogany">#FF230007</color>
     <color name="goldenGlow">#FFD7CF07</color>
     <color name="amberEarth">#FFD98324</color>

@@ -11,15 +11,13 @@ import androidx.compose.ui.res.colorResource
 import com.example.myapplication.R
 
 import com.example.myapplication.components.MovieCard.MovieCard
+import com.example.myapplication.components.MovieCard.MovieCardType.Banner
 
 @Composable
 fun BannerCard (aspectratio : Float){
-
-    val modifier : Modifier = Modifier
-    .aspectRatio(aspectratio)
-    .fillMaxWidth()
     MovieCard(
         textTest = "Banner",
-        modifier = modifier
+        image = R.drawable.movie_2,
+        type = Banner
     )
 }
