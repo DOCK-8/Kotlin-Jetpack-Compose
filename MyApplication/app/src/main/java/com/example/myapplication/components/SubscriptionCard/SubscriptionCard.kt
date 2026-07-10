@@ -7,6 +7,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 
 import androidx.compose.material3.Text
+import androidx.compose.material3.Button
+
+import com.example.myapplication.components.FeatureItem.FeatureItem
 
 @Composable
 fun SubscriptionCard(
@@ -18,13 +21,12 @@ fun SubscriptionCard(
     )
     LazyColumn{
         items(subscriptionData.features){
-            feature ->
-                FeatureItem(
-                    featureData = feature
-                )
+            FeatureItem(
+                featureData = it
+            )
         }
     }
-    Button{
+    Button(onClick = {}){
         Text(
             text = "SUSCRIBIRSE"
         )

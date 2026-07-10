@@ -5,5 +5,5 @@ data class SubscriptionPlan(
     val title : String,
     val description : String,
     val price : Double,
-    val features : List<FeatureItem>
+    val features : List<FeaturePlan>
 )

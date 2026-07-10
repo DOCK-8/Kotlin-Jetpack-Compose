@@ -9,6 +9,9 @@ import com.example.myapplication.model.SubscriptionPlan.SubscriptionRepository
 import com.example.myapplication.model.SubscriptionPlan.SubscriptionPlan
 import com.example.myapplication.model.SubscriptionPlan.FeaturePlan
 
+import com.example.myapplication.components.FeatureItem.FeatureViewData
+import com.example.myapplication.components.SubscriptionCard.SubscriptionViewData
+
 class SubscriptionViewModel (
    private val repository : SubscriptionRepository,
 ) : ViewModel {

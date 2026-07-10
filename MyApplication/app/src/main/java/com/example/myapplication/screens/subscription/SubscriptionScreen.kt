@@ -11,14 +11,15 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 import com.example.myapplication.components.SubscriptionCard.SubscriptionCard
 
 @Composable
 fun SubscriptionScreen (
     modifier : Modifier,
-    viewModel : ViewModel
 ){
+    val viewModel : SubscriptionViewModel = viewModel()
     val subscriptionPlans by viewModel.subscriptionPlans.collectAsState()
     LazyRow{
         items(subscriptionPlans){
