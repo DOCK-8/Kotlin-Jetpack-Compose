@@ -1,7 +1,7 @@
 package com.example.myapplication.model.SubscriptionPlan
 
-class SubscriptionPlanRepository : Repository{
-    fun getSubscriptionPlans (){
+class SubscriptionLocalRepository : SubscriptionRepository{
+    override fun getSubscriptionPlans () : List<SubscriptionPlan>{
         val testFeature = FeaturePlan(
             nameFeature = "FEATURE DE PRUEBA",
             iconFeature = 1
@@ -13,7 +13,7 @@ class SubscriptionPlanRepository : Repository{
             price = 999.999,
             features = listOf(testFeature,testFeature)
         )
-        val subscriptionPlans : list<SubscriptionPlan> = listOf(
+        val subscriptionPlans : List<SubscriptionPlan> = listOf(
             testPlan,
             testPlan,
             testPlan,

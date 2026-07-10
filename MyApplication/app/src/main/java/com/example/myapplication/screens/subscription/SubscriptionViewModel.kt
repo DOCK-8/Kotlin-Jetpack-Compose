@@ -2,33 +2,37 @@ package com.example.myapplication.screens.subscription
 
 import androidx.lifecycle.ViewModel
 
-import com.example.myapplication.model.Repository
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+
+import com.example.myapplication.model.SubscriptionPlan.SubscriptionRepository
 import com.example.myapplication.model.SubscriptionPlan.SubscriptionPlan
 import com.example.myapplication.model.SubscriptionPlan.FeaturePlan
 
 class SubscriptionViewModel (
-   val repository : Repository,
+   private val repository : SubscriptionRepository,
 ) : ViewModel {
-   private val _subscriptionPlans by mutableStateFlow(List<SubscriptionViewData>)
+   private val _subscriptionPlans = MutableStateFlow<List<SubscriptionViewData>>(emptyList())
    val subscriptionPlans = _subscriptionPlans.asStateFlow()
 
-   fun fetchSubscriptionPlans(){
-      return repository.getSubscriptionPlans().map(plan ->
-         fetchSubscriptionPlan(plan)
-      )
+   fun mapSubscriptionPlans(){
+      val plans = repository.getSubscriptionPlans()
+      _subscriptionPlans.value = plans.map{
+         mapSubscriptionPlan(it)
+      }
    }
-   fun fetchSubscriptionPlan(subscriptionPlan : SubscriptionPlan) : SubscriptionViewData{
+   fun mapSubscriptionPlan(subscriptionPlan : SubscriptionPlan) : SubscriptionViewData{
       return SubscriptionViewData(
          title = subscriptionPlan.title,
          description = subscriptionPlan.description,
          price = subscriptionPlan.price,
-         features = subscriptionPlan.map(feature ->
-            fetchFeaturePlan(feature)
-         )      
+         features = subscriptionPlan.features.map{
+            mapFeaturePlan(it)
+         }
       ) 
    }
    
-   fun fetchFeaturePlan(featurePlan : FeaturePlan) : FeatureViewData{
+   fun mapFeaturePlan(featurePlan : FeaturePlan) : FeatureViewData{
       return FeatureViewData(
          name = featurePlan.nameFeature,
          icon = featurePlan.iconFeature

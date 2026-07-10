@@ -10,6 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 
+import androidx.lifecycle.ViewModel
+
 import com.example.myapplication.components.SubscriptionCard.SubscriptionCard
 
 @Composable
@@ -17,9 +19,10 @@ fun SubscriptionScreen (
     modifier : Modifier,
     viewModel : ViewModel
 ){
+    val subscriptionPlans by viewModel.subscriptionPlans.collectAsState()
     LazyRow{
-        items(pruebaList){
-            shopp -> SubscriptionCard(shopp)
+        items(subscriptionPlans){
+            SubscriptionCard(it)
         }
     }
 }
