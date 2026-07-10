@@ -10,6 +10,10 @@ kotlin = "2.4.0"
 composeBom = "2026.02.01"
 room = "2.8.4"
 ksp = "2.3.9"
+firebaseBom = "34.15.0"
+servicesGoogle = "4.5.0"
+firebaseCrashlytics = "3.0.7"
+viewModel = "2.10.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,8 +35,14 @@ room-runtime = {group = "androidx.room", name = "room-runtime", version.ref = "r
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom"}
+firebase-crashlytics = { group = "com.google.firebase",  name = "firebase-crashlytics"}
+
+view-model = {group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "viewModel"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+googleServices = { id = "com.google.gms.google-services", version.ref = "servicesGoogle"}
+crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlytics"}
