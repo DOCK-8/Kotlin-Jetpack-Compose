@@ -33,13 +33,15 @@ fun appIcon(
                 repeatMode = RepeatMode.Reverse
             ),
             label = "color"
-        )
+        ).value
+        AppIconType.EditProfile -> colorResource(R.color.white)
+        AppIconType.Subscription -> colorResource(R.color.transparent)
     }
     val style = getIconStyle(type)
     Icon(
         painter = painterResource(style.icon),
         contentDescription = iconDescription,
         modifier = modifier.size(style.size),
-        tint = animation.value
+        tint = animation
     )
 }

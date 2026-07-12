@@ -7,6 +7,8 @@ import com.example.myapplication.R
 
 sealed class AppIconType{
     object SplashApp : AppIconType()
+    object EditProfile : AppIconType()
+    object Subscription : AppIconType()
 }
 
 data class IconStyle(
@@ -19,6 +21,14 @@ fun getIconStyle(type : AppIconType) : IconStyle{
         AppIconType.SplashApp -> IconStyle(
             size = 110.dp,
             icon = R.drawable.splash_icon
+        )
+        AppIconType.EditProfile -> IconStyle(
+            size = 24.dp,
+            icon = R.drawable.edit_profile
+        )
+        AppIconType.Subscription -> IconStyle(
+            size = 0.dp,
+            icon = R.drawable.edit_profile
         )
     }
 }

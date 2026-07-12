@@ -3,6 +3,7 @@ package com.example.myapplication.components.SubscriptionCard
 import com.example.myapplication.components.FeatureItem.FeatureViewData
 
 data class SubscriptionViewData (
+   val plan : Int,
    val title : String,
    val description : String,
    val price : Double,

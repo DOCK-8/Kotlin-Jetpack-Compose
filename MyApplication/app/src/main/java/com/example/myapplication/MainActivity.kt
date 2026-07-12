@@ -9,7 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.example.myapplication.ui.theme.MyApplicationTheme
-import com.example.myapplication.screens.subscription.SubscriptionScreen
+import com.example.myapplication.screens.profile.ProfileScreen
 
 class MainActivity : ComponentActivity() {
 
@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             MyApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                  SubscriptionScreen(modifier = Modifier.padding(innerPadding)) 
+                  ProfileScreen(modifier = Modifier.padding(innerPadding)) 
                 }
             }
         }
